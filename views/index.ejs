@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L A Y L A' S</title>
+  
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="lyla's-logo.png" alt="lyla's Logo">
+            <span>lyla's</span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">INVENTORY</a></li>
+                <li><a href="/transactions">TRANSACTIONS</a></li>
+                <li><a href="/order">ORDER</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>PRODUCTID</th>
+                    <th>PRODUCT</th>
+                    <th>QUANTITY</th>
+                    <th>PRICE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% queryResults.forEach(result => { %>
+                    <tr>
+                         <td><%= result.ProductID %></td>
+                        <td><%= result.Product %></td>
+                        <td><%= result.Price %></td>
+                        <td><%= result.StockQuantity %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </main>
+    <footer class="footer">
+        <div class="action-buttons">
+            <button class="add" onclick="showAddForm()">ADD</button>
+            <button class="delete" onclick="showDeleteForm()">DELETE</button>
+            <button class="update">UPDATE</button>
+        </div>
+
+
+        <div class="addForm" style="display: none;">
+            <form action="/addProduct" method="post">
+                <div>
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                
+                <br>
+
+                <div>
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required>    
+                </div>
+               
+                <br>
+
+                <div>
+                    <label for="stockQuantity">Stock Quantity:</label>
+                    <input type="number" id="stockQuantity" name="stockQuantity" required>    
+                </div>
+
+                <br>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+
+        <div class="deleteForm" style="display: none;">
+            <form action="/deleteProduct" method="post">
+               <div>
+                <label for="productId">Product ID to Delete:</label>
+                <input type="number" id="productId" name="productId" required>
+               </div>
+
+               <br>
+
+                <button type="submit">Delete Product</button>
+            </form>
+        </div>
+    </footer>
+    <script src="newServer2.js"></script>
+    <script>
+        function showAddForm() {
+            document.querySelector('.addForm').style.display = 'block';
+            document.querySelector('.deleteForm').style.display = 'none';
+        }
+
+        function showDeleteForm() {
+            document.querySelector('.deleteForm').style.display = 'block';
+            document.querySelector('.addForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

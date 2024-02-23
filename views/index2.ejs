@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+   
+</head>
+     <body>
+            <h1>Order Form</h1>
+            <form action="/submitOrder" method="post">
+            <table border="1">
+                <tbody>
+                <tr>
+                    <td>NAME</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>FACEBOOK</td>
+                    <td><input type="text" name="facebook" required></td>
+                </tr>
+                <tr>
+                    <td>NUMBER</td>
+                    <td><input type="tel" name="number" required></td>
+                </tr>
+                <tr>
+                    <td>FLAVOR OF THE CAKE</td>
+                    <td><input type="text" name="flavor" ></td>
+                </tr>
+                <tr>
+                    <td>DESIGN OF THE CAKE</td>
+                    <td><input type="text" name="design" ></td>
+                </tr>
+                <tr>
+                    <td>SIZE OF THE CAKE</td>
+                    <td><input type="text" name="size" ></td>
+                </tr>
+                <tr>
+                    <td>DEDICATION</td>
+                    <td><input type="text" name="dedication" ></td>
+                </tr>
+                <tr>
+                    <td>ADD-ONS</td>
+                    <td><input type="text" name="addons" ></td>
+                </tr>
+                <tr>
+                    <td>SPECIAL INSTRUCTION</td>
+                    <td><input type="text" name="instruction" ></td>
+                </tr>
+                <tr>
+                    <td>BREAD</td>
+                    <td><input type="text" name="bread" ></td>
+                </tr>
+                <tr>
+                    <td>CUPCAKES</td>
+                    <td><input type="text" name="cupcakes" ></td>
+                </tr>
+                <tr>
+                    <td>PASTRIES</td>
+                    <td><input type="text" name="pastries" ></td>
+                </tr>
+                <tr>
+                    <td>MODE OF PAYMENT</td>
+                    <td><input type="text" name="payment" required></td>
+                </tr>
+                <tr>
+                    <td>DELIVERY OR PICK UP</td>
+                    <td><input type="text" name="delivery" ></td>
+                </tr>
+                <tr>
+                    <td>DATE OF PICK UP</td>
+                    <td><input type="date" name="pickupDate" required ></td>
+                </tr>
+                <tr>
+                    <td>TIME OF PICK UP</td>
+                    <td><input type="time" name="pickupTime" required ></td>
+                </tr>
+                <tr>
+                    <td>LOCATION OF DELIVERY</td>
+                    <td><input type="text" name="deliveryLocation" ></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit">Submit Order</button>
+            </form>
+        <script src="newServer2.js"></script>
+    </body>
+</html>
